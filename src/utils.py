@@ -5,8 +5,16 @@ baseline_model.py, genetic_algorithm.py, pso.py ve evaluate.py bu modülü payla
 from __future__ import annotations
 
 import json
+import sys
 from dataclasses import dataclass
 from pathlib import Path
+
+# Windows konsolu (cp1254) Yunan harfi λ vb. karakterlerde çöküyor — UTF-8'e geç.
+for _stream in (sys.stdout, sys.stderr):
+    try:
+        _stream.reconfigure(encoding="utf-8")
+    except (AttributeError, ValueError):
+        pass
 
 import numpy as np
 import pandas as pd
