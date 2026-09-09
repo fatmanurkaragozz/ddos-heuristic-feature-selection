@@ -1,0 +1,40 @@
+[
+  {
+    "lambda": 0.05,
+    "n_features": 26,
+    "val_macro_f1": 0.8787616548012928,
+    "fitness": 0.8587616548012927,
+    "test_macro_f1": 0.9019264128799694,
+    "test_accuracy": 0.9730126426148628,
+    "test_suspicious_f1": 0.7496017840076458,
+    "features": [
+      "bwd_init_win_bytes",
+      "bwd_rst_flag_percentage_in_bwd_packets",
+      "down_up_rate",
+      "dst_port",
+      "fwd_ack_flag_percentage_in_total",
+      "fwd_init_win_bytes",
+      "fwd_max_header_bytes",
+      "fwd_packets_IAT_mean",
+      "fwd_rst_flag_counts",
+      "fwd_syn_flag_percentage_in_fwd_packets",
+      "max_bwd_packets_delta_len",
+      "max_fwd_packets_delta_time",
+      "max_header_bytes",
+      "mean_bwd_packets_delta_len",
+      "mean_packets_delta_len",
+      "mean_packets_delta_time",
+      "min_bwd_packets_delta_time",
+      "min_fwd_packets_delta_time",
+      "min_header_bytes",
+      "mode_packets_delta_time",
+      "packets_IAT_cov",
+      "packets_IAT_mean",
+      "src_port",
+      "std_header_bytes",
+      "std_packets_delta_time",
+      "variance_packets_delta_time"
+    ],
+    "ga_runtime_s": 4.581219299987424
+  }
+]

@@ -69,6 +69,60 @@ def fix_empty(ind) -> None:
         ind[random.randrange(len(ind))] = 1
 
 
+def run_ga(ev: FitnessEvaluator, *, pop: int, generations: int, cxpb: float, mutpb: float,
+           mut_indpb: float, elite: int, init_p: float, verbose: bool = True) -> dict:
+    """GA çekirdeği. `ev` fitness değerlendirici. En iyi alt küme + nesil logu döndürür.
+
+    lambda_sweep.py da bu fonksiyonu çağırır — GA mantığı tek yerde.
+    """
+    tb = build_toolbox(ev.pool_size, ev, init_p, mut_indpb)
+    population = tb.population(n=pop)
+    for ind in population:
+        fix_empty(ind)
+        ind.fitness.values = tb.evaluate(ind)
+
+    log = []
+    t0 = time.perf_counter()
+    for gen in range(1, generations + 1):
+        offspring = [tb.clone(o) for o in tb.select(population, len(population) - elite)]
+        for c1, c2 in zip(offspring[::2], offspring[1::2]):
+            if random.random() < cxpb:
+                tb.mate(c1, c2)
+                del c1.fitness.values, c2.fitness.values
+        for m in offspring:
+            if random.random() < mutpb:
+                tb.mutate(m)
+                del m.fitness.values
+        for ind in offspring:
+            fix_empty(ind)
+            if not ind.fitness.valid:
+                ind.fitness.values = tb.evaluate(ind)
+        population = tools.selBest(population, elite) + offspring
+
+        bi = ev.evaluate(tools.selBest(population, 1)[0])
+        sizes = [sum(i) for i in population]
+        log.append({
+            "gen": gen,
+            "best_fitness": float(bi["fitness"]), "best_macro_f1": float(bi["macro_f1"]),
+            "best_n_features": int(bi["n_selected"]),
+            "mean_fitness": float(np.mean([i.fitness.values[0] for i in population])),
+            "mean_n_features": float(np.mean(sizes)),
+        })
+        if verbose:
+            print(f"  nesil {gen:2d}: en iyi fitness={bi['fitness']:.4f}  macro-F1={bi['macro_f1']:.4f}  "
+                  f"öznitelik={bi['n_selected']:2d}  (ort {np.mean(sizes):.1f}, "
+                  f"benzersiz değerlendirme {ev.n_evals})")
+
+    bi = ev.evaluate(tools.selBest(population, 1)[0])
+    return {
+        "runtime_s": time.perf_counter() - t0,
+        "unique_evaluations": ev.n_evals,
+        "best": {"n_features": bi["n_selected"], "val_macro_f1": bi["macro_f1"],
+                 "fitness": bi["fitness"], "features": bi["features"]},
+        "history": log,
+    }
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--pool", default="union", choices=["rf", "mi", "union", "overlap"])
@@ -94,72 +148,18 @@ def main() -> None:
           f"pop={args.pop} nesil={args.generations}")
     print(f"Fitness alt örneklem: train {len(ev.y_tr):,} / val {len(ev.y_va):,}\n")
 
-    tb = build_toolbox(ev.pool_size, ev, args.init_p, args.mut_indpb)
-    pop = tb.population(n=args.pop)
-    for ind in pop:
-        fix_empty(ind)
-        ind.fitness.values = tb.evaluate(ind)
-
-    log = []
-    t0 = time.perf_counter()
-    for gen in range(1, args.generations + 1):
-        offspring = tb.select(pop, len(pop) - args.elite)
-        offspring = [tb.clone(o) for o in offspring]
-
-        for c1, c2 in zip(offspring[::2], offspring[1::2]):
-            if random.random() < args.cxpb:
-                tb.mate(c1, c2)
-                del c1.fitness.values, c2.fitness.values
-        for m in offspring:
-            if random.random() < args.mutpb:
-                tb.mutate(m)
-                del m.fitness.values
-        for ind in offspring:
-            fix_empty(ind)
-            if not ind.fitness.valid:
-                ind.fitness.values = tb.evaluate(ind)
-
-        pop = tools.selBest(pop, args.elite) + offspring
-
-        best = tools.selBest(pop, 1)[0]
-        best_info = ev.evaluate(best)
-        fits = [i.fitness.values[0] for i in pop]
-        sizes = [sum(i) for i in pop]
-        log.append({
-            "gen": gen,
-            "best_fitness": float(best_info["fitness"]),
-            "best_macro_f1": float(best_info["macro_f1"]),
-            "best_n_features": int(best_info["n_selected"]),
-            "mean_fitness": float(np.mean(fits)),
-            "mean_n_features": float(np.mean(sizes)),
-            "unique_evals": ev.n_evals,
-        })
-        print(f"  nesil {gen:2d}: en iyi fitness={best_info['fitness']:.4f}  "
-              f"macro-F1={best_info['macro_f1']:.4f}  öznitelik={best_info['n_selected']:2d}  "
-              f"(ort öznitelik {np.mean(sizes):.1f}, benzersiz değerlendirme {ev.n_evals})")
-
-    runtime = time.perf_counter() - t0
-    best = tools.selBest(pop, 1)[0]
-    bi = ev.evaluate(best)
-    print(f"\nGA bitti ({runtime:.0f}s, {ev.n_evals} benzersiz değerlendirme)")
-    print(f"En iyi alt küme: {bi['n_selected']} öznitelik | val macro-F1 = {bi['macro_f1']:.4f} | "
+    result = run_ga(ev, pop=args.pop, generations=args.generations, cxpb=args.cxpb,
+                    mutpb=args.mutpb, mut_indpb=args.mut_indpb, elite=args.elite, init_p=args.init_p)
+    result["method"] = "genetic_algorithm"
+    result["params"] = vars(args)
+    result["pool_size"] = ev.pool_size
+    log = result["history"]
+    bi = result["best"]
+    print(f"\nGA bitti ({result['runtime_s']:.0f}s, {result['unique_evaluations']} benzersiz değerlendirme)")
+    print(f"En iyi alt küme: {bi['n_features']} öznitelik | val macro-F1 = {bi['val_macro_f1']:.4f} | "
           f"fitness = {bi['fitness']:.4f}")
     print("Öznitelikler:", bi["features"])
 
-    result = {
-        "method": "genetic_algorithm",
-        "params": vars(args),
-        "pool_size": ev.pool_size,
-        "runtime_s": runtime,
-        "unique_evaluations": ev.n_evals,
-        "best": {
-            "n_features": bi["n_selected"],
-            "val_macro_f1": bi["macro_f1"],
-            "fitness": bi["fitness"],
-            "features": bi["features"],
-        },
-        "history": log,
-    }
     (METRICS_DIR / "ga_result.json").write_text(json.dumps(result, indent=2), encoding="utf-8")
 
     # yakınsama grafiği
