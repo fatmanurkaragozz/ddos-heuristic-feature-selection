@@ -1,0 +1,89 @@
+{
+  "dataset": {
+    "n_features": 183,
+    "class_names": [
+      "Attack",
+      "Benign",
+      "Suspicious"
+    ]
+  },
+  "random_forest": {
+    "n_features": 183,
+    "cv_rows": 459419,
+    "cv": {
+      "fit_time_s": {
+        "mean": 150.62290573120117,
+        "std": 0.7385438655197607
+      },
+      "accuracy": {
+        "mean": 0.9588523763936581,
+        "std": 0.0007202315644204055
+      },
+      "macro_f1": {
+        "mean": 0.8694837127323651,
+        "std": 0.00158440654002545
+      },
+      "macro_precision": {
+        "mean": 0.8403799974522863,
+        "std": 0.0017070406291232296
+      },
+      "macro_recall": {
+        "mean": 0.9200648593543587,
+        "std": 0.003012898260845138
+      }
+    },
+    "test": {
+      "accuracy": 0.9586802343509097,
+      "macro_f1": 0.8693406834508427,
+      "macro_precision": 0.8387315824383691,
+      "macro_recall": 0.9254327799041205,
+      "weighted_f1": 0.9618369830885989,
+      "per_class": {
+        "Attack": {
+          "precision": 0.9768101434768102,
+          "recall": 0.9160603927090667,
+          "f1": 0.9454604174236002
+        },
+        "Benign": {
+          "precision": 0.9894647963002053,
+          "recall": 0.9844397349981863,
+          "f1": 0.98694586938213
+        },
+        "Suspicious": {
+          "precision": 0.5499198075380914,
+          "recall": 0.8757982120051085,
+          "f1": 0.675615763546798
+        }
+      }
+    },
+    "full_fit_time_s": 40.424233900004765,
+    "test_predict_time_s": 0.6962743000185583
+  },
+  "svm_rbf": {
+    "n_features": 183,
+    "cv_rows": 60000,
+    "cv": {
+      "fit_time_s": {
+        "mean": 485.01347455978396,
+        "std": 2.982459341183042
+      },
+      "accuracy": {
+        "mean": 0.8048833333333333,
+        "std": 0.003598842406478348
+      },
+      "macro_f1": {
+        "mean": 0.6660450067333528,
+        "std": 0.004062972754049337
+      },
+      "macro_precision": {
+        "mean": 0.6995167467248466,
+        "std": 0.00195684157886457
+      },
+      "macro_recall": {
+        "mean": 0.7812338996721025,
+        "std": 0.00826507075836608
+      }
+    },
+    "note": "CV 60,000 sat\u0131rl\u0131k stratified alt \u00f6rneklem \u00fczerinde; test de\u011ferlendirmesi atland\u0131 (maliyet)."
+  }
+}
