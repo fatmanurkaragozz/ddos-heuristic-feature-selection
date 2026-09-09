@@ -1,0 +1,621 @@
+{
+  "all_183": {
+    "n_features": 183,
+    "features": [
+      "src_port",
+      "dst_port",
+      "duration",
+      "packets_count",
+      "fwd_packets_count",
+      "bwd_packets_count",
+      "total_payload_bytes",
+      "fwd_total_payload_bytes",
+      "payload_bytes_max",
+      "payload_bytes_mean",
+      "payload_bytes_std",
+      "payload_bytes_variance",
+      "payload_bytes_median",
+      "payload_bytes_skewness",
+      "payload_bytes_cov",
+      "fwd_payload_bytes_variance",
+      "fwd_payload_bytes_median",
+      "fwd_payload_bytes_skewness",
+      "fwd_payload_bytes_cov",
+      "fwd_payload_bytes_mode",
+      "bwd_payload_bytes_variance",
+      "bwd_payload_bytes_median",
+      "bwd_payload_bytes_skewness",
+      "bwd_payload_bytes_cov",
+      "bwd_payload_bytes_mode",
+      "max_header_bytes",
+      "min_header_bytes",
+      "std_header_bytes",
+      "skewness_header_bytes",
+      "variance_header_bytes",
+      "fwd_total_header_bytes",
+      "fwd_max_header_bytes",
+      "fwd_std_header_bytes",
+      "fwd_skewness_header_bytes",
+      "fwd_variance_header_bytes",
+      "bwd_max_header_bytes",
+      "bwd_std_header_bytes",
+      "bwd_skewness_header_bytes",
+      "bwd_variance_header_bytes",
+      "bwd_avg_segment_size",
+      "fwd_init_win_bytes",
+      "bwd_init_win_bytes",
+      "bytes_rate",
+      "bwd_bytes_rate",
+      "packets_rate",
+      "bwd_packets_rate",
+      "fwd_packets_rate",
+      "down_up_rate",
+      "fin_flag_counts",
+      "psh_flag_counts",
+      "ece_flag_counts",
+      "syn_flag_counts",
+      "cwr_flag_counts",
+      "rst_flag_counts",
+      "fwd_fin_flag_counts",
+      "fwd_psh_flag_counts",
+      "fwd_syn_flag_counts",
+      "fwd_ack_flag_counts",
+      "fwd_rst_flag_counts",
+      "bwd_fin_flag_counts",
+      "bwd_psh_flag_counts",
+      "bwd_ece_flag_counts",
+      "bwd_syn_flag_counts",
+      "bwd_rst_flag_counts",
+      "fin_flag_percentage_in_total",
+      "psh_flag_percentage_in_total",
+      "ece_flag_percentage_in_total",
+      "syn_flag_percentage_in_total",
+      "ack_flag_percentage_in_total",
+      "cwr_flag_percentage_in_total",
+      "rst_flag_percentage_in_total",
+      "fwd_fin_flag_percentage_in_total",
+      "fwd_psh_flag_percentage_in_total",
+      "fwd_ece_flag_percentage_in_total",
+      "fwd_syn_flag_percentage_in_total",
+      "fwd_ack_flag_percentage_in_total",
+      "bwd_fin_flag_percentage_in_total",
+      "bwd_psh_flag_percentage_in_total",
+      "bwd_ece_flag_percentage_in_total",
+      "bwd_syn_flag_percentage_in_total",
+      "bwd_ack_flag_percentage_in_total",
+      "bwd_rst_flag_percentage_in_total",
+      "fwd_fin_flag_percentage_in_fwd_packets",
+      "fwd_psh_flag_percentage_in_fwd_packets",
+      "fwd_ece_flag_percentage_in_fwd_packets",
+      "fwd_syn_flag_percentage_in_fwd_packets",
+      "fwd_ack_flag_percentage_in_fwd_packets",
+      "bwd_fin_flag_percentage_in_bwd_packets",
+      "bwd_psh_flag_percentage_in_bwd_packets",
+      "bwd_ece_flag_percentage_in_bwd_packets",
+      "bwd_syn_flag_percentage_in_bwd_packets",
+      "bwd_ack_flag_percentage_in_bwd_packets",
+      "bwd_rst_flag_percentage_in_bwd_packets",
+      "packets_IAT_mean",
+      "packet_IAT_std",
+      "packets_IAT_skewness",
+      "packets_IAT_cov",
+      "packets_IAT_variance",
+      "fwd_packets_IAT_mean",
+      "fwd_packets_IAT_std",
+      "fwd_packets_IAT_skewness",
+      "fwd_packets_IAT_cov",
+      "fwd_packets_IAT_variance",
+      "bwd_packets_IAT_mean",
+      "bwd_packets_IAT_std",
+      "bwd_packets_IAT_skewness",
+      "bwd_packets_IAT_cov",
+      "bwd_packets_IAT_variance",
+      "subflow_fwd_packets",
+      "subflow_bwd_packets",
+      "delta_start",
+      "handshake_duration",
+      "handshake_state",
+      "min_bwd_packets_delta_time",
+      "max_bwd_packets_delta_time",
+      "mean_packets_delta_time",
+      "mode_packets_delta_time",
+      "variance_packets_delta_time",
+      "std_packets_delta_time",
+      "median_packets_delta_time",
+      "skewness_packets_delta_time",
+      "mean_bwd_packets_delta_time",
+      "variance_bwd_packets_delta_time",
+      "std_bwd_packets_delta_time",
+      "median_bwd_packets_delta_time",
+      "skewness_bwd_packets_delta_time",
+      "cov_bwd_packets_delta_time",
+      "min_fwd_packets_delta_time",
+      "max_fwd_packets_delta_time",
+      "mean_fwd_packets_delta_time",
+      "variance_fwd_packets_delta_time",
+      "std_fwd_packets_delta_time",
+      "median_fwd_packets_delta_time",
+      "skewness_fwd_packets_delta_time",
+      "min_packets_delta_len",
+      "max_packets_delta_len",
+      "mean_packets_delta_len",
+      "mode_packets_delta_len",
+      "variance_packets_delta_len",
+      "std_packets_delta_len",
+      "median_packets_delta_len",
+      "skewness_packets_delta_len",
+      "min_bwd_packets_delta_len",
+      "max_bwd_packets_delta_len",
+      "mean_bwd_packets_delta_len",
+      "mode_bwd_packets_delta_len",
+      "variance_bwd_packets_delta_len",
+      "std_bwd_packets_delta_len",
+      "skewness_bwd_packets_delta_len",
+      "min_fwd_packets_delta_len",
+      "max_fwd_packets_delta_len",
+      "mean_fwd_packets_delta_len",
+      "mode_fwd_packets_delta_len",
+      "variance_fwd_packets_delta_len",
+      "std_fwd_packets_delta_len",
+      "median_fwd_packets_delta_len",
+      "skewness_fwd_packets_delta_len",
+      "cov_fwd_packets_delta_len",
+      "max_header_bytes_delta_len",
+      "mean_header_bytes_delta_len",
+      "mode_header_bytes_delta_len",
+      "variance_header_bytes_delta_len",
+      "std_header_bytes_delta_len",
+      "skewness_header_bytes_delta_len",
+      "cov_header_bytes_delta_len",
+      "max_bwd_header_bytes_delta_len",
+      "variance_bwd_header_bytes_delta_len",
+      "std_bwd_header_bytes_delta_len",
+      "skewness_bwd_header_bytes_delta_len",
+      "cov_bwd_header_bytes_delta_len",
+      "min_fwd_header_bytes_delta_len",
+      "mean_fwd_header_bytes_delta_len",
+      "mode_fwd_header_bytes_delta_len",
+      "variance_fwd_header_bytes_delta_len",
+      "std_fwd_header_bytes_delta_len",
+      "median_fwd_header_bytes_delta_len",
+      "skewness_fwd_header_bytes_delta_len",
+      "cov_fwd_header_bytes_delta_len",
+      "mode_payload_bytes_delta_len",
+      "skewness_payload_bytes_delta_len",
+      "mode_bwd_payload_bytes_delta_len",
+      "skewness_bwd_payload_bytes_delta_len",
+      "skewness_fwd_payload_bytes_delta_len"
+    ],
+    "cv": {
+      "accuracy": {
+        "mean": 0.9588523763936581,
+        "std": 0.0007202315644204055
+      },
+      "macro_f1": {
+        "mean": 0.8694837127323651,
+        "std": 0.00158440654002545
+      },
+      "macro_precision": {
+        "mean": 0.8403799974522863,
+        "std": 0.0017070406291232296
+      },
+      "macro_recall": {
+        "mean": 0.9200648593543587,
+        "std": 0.003012898260845138
+      }
+    },
+    "test": {
+      "accuracy": 0.9586802343509097,
+      "macro_f1": 0.8693406834508427,
+      "macro_precision": 0.8387315824383691,
+      "macro_recall": 0.9254327799041205,
+      "weighted_f1": 0.9618369830885989,
+      "per_class": {
+        "Attack": {
+          "precision": 0.9768101434768102,
+          "recall": 0.9160603927090667,
+          "f1": 0.9454604174236002
+        },
+        "Benign": {
+          "precision": 0.9894647963002053,
+          "recall": 0.9844397349981863,
+          "f1": 0.98694586938213
+        },
+        "Suspicious": {
+          "precision": 0.5499198075380914,
+          "recall": 0.8757982120051085,
+          "f1": 0.675615763546798
+        }
+      }
+    },
+    "fit_time_s": 42.31264950000332,
+    "predict_time_s": 0.584484999999404,
+    "svm_test": {
+      "accuracy": 0.8009744064138143,
+      "macro_f1": 0.664458174861332,
+      "macro_precision": 0.6989974379623317,
+      "macro_recall": 0.7845448923601182,
+      "weighted_f1": 0.8539501999601965,
+      "per_class": {
+        "Attack": {
+          "precision": 0.9912969111580642,
+          "recall": 0.7707502151294688,
+          "f1": 0.8672211953173136
+        },
+        "Benign": {
+          "precision": 0.9618951386549904,
+          "recall": 0.8178780762548447,
+          "f1": 0.8840597655605085
+        },
+        "Suspicious": {
+          "precision": 0.1438002640739407,
+          "recall": 0.7650063856960408,
+          "f1": 0.24209356370617358
+        }
+      }
+    },
+    "svm_fit_time_s": 442.98365010001
+  },
+  "top_k_rf": {
+    "n_features": 15,
+    "features": [
+      "fwd_packets_IAT_mean",
+      "packets_IAT_mean",
+      "fwd_max_header_bytes",
+      "min_header_bytes",
+      "fwd_total_header_bytes",
+      "max_header_bytes",
+      "src_port",
+      "fwd_init_win_bytes",
+      "dst_port",
+      "bwd_packets_IAT_mean",
+      "mean_packets_delta_time",
+      "median_packets_delta_time",
+      "mode_packets_delta_time",
+      "fwd_syn_flag_percentage_in_total",
+      "syn_flag_percentage_in_total"
+    ],
+    "cv": {
+      "accuracy": {
+        "mean": 0.9703908635167231,
+        "std": 0.0003109085632000718
+      },
+      "macro_f1": {
+        "mean": 0.8964499620616522,
+        "std": 0.0017379129411795226
+      },
+      "macro_precision": {
+        "mean": 0.8905914944670764,
+        "std": 0.0013713277263621743
+      },
+      "macro_recall": {
+        "mean": 0.9026732527921786,
+        "std": 0.0031178565703590313
+      }
+    },
+    "test": {
+      "accuracy": 0.971236509404872,
+      "macro_f1": 0.8970076290290309,
+      "macro_precision": 0.8909426695283117,
+      "macro_recall": 0.9034503601593004,
+      "weighted_f1": 0.9715131481399838,
+      "per_class": {
+        "Attack": {
+          "precision": 0.9642954909858824,
+          "recall": 0.9644840804193069,
+          "f1": 0.9643897764827816
+        },
+        "Benign": {
+          "precision": 0.9907077441851554,
+          "recall": 0.9872463104034214,
+          "f1": 0.9889739985273164
+        },
+        "Suspicious": {
+          "precision": 0.7178247734138973,
+          "recall": 0.7586206896551724,
+          "f1": 0.7376591120769947
+        }
+      }
+    },
+    "fit_time_s": 28.146174600027734,
+    "predict_time_s": 0.32311720002326183
+  },
+  "rfe": {
+    "n_features": 15,
+    "features": [
+      "src_port",
+      "dst_port",
+      "duration",
+      "max_header_bytes",
+      "min_header_bytes",
+      "fwd_total_header_bytes",
+      "fwd_max_header_bytes",
+      "fwd_init_win_bytes",
+      "packets_IAT_mean",
+      "fwd_packets_IAT_mean",
+      "bwd_packets_IAT_mean",
+      "mean_packets_delta_time",
+      "mode_packets_delta_time",
+      "median_packets_delta_time",
+      "mean_bwd_packets_delta_time"
+    ],
+    "cv": {
+      "accuracy": {
+        "mean": 0.968921616607919,
+        "std": 0.0003712517357121659
+      },
+      "macro_f1": {
+        "mean": 0.8927463550475778,
+        "std": 0.0017755171678195123
+      },
+      "macro_precision": {
+        "mean": 0.882282655911796,
+        "std": 0.0007901412518881748
+      },
+      "macro_recall": {
+        "mean": 0.9045235322974458,
+        "std": 0.003730962636770344
+      }
+    },
+    "test": {
+      "accuracy": 0.9697070613629356,
+      "macro_f1": 0.8932468748093193,
+      "macro_precision": 0.8821183545061707,
+      "macro_recall": 0.9059095173104194,
+      "weighted_f1": 0.9702722878140689,
+      "per_class": {
+        "Attack": {
+          "precision": 0.9656517115058888,
+          "recall": 0.9588907142298365,
+          "f1": 0.9622593370360921
+        },
+        "Benign": {
+          "precision": 0.9904378652869599,
+          "recall": 0.9868071863604254,
+          "f1": 0.9886191924408485
+        },
+        "Suspicious": {
+          "precision": 0.6902654867256637,
+          "recall": 0.7720306513409961,
+          "f1": 0.7288620949510173
+        }
+      }
+    },
+    "fit_time_s": 23.792055999976583,
+    "predict_time_s": 0.275463400001172
+  },
+  "ga": {
+    "n_features": 15,
+    "features": [
+      "bwd_init_win_bytes",
+      "dst_port",
+      "fwd_ack_flag_percentage_in_total",
+      "fwd_init_win_bytes",
+      "fwd_max_header_bytes",
+      "fwd_packets_IAT_mean",
+      "fwd_rst_flag_counts",
+      "max_bwd_packets_delta_len",
+      "mean_bwd_packets_delta_len",
+      "mean_packets_delta_len",
+      "min_bwd_packets_delta_time",
+      "min_fwd_packets_delta_time",
+      "packets_IAT_cov",
+      "packets_IAT_mean",
+      "src_port"
+    ],
+    "cv": {
+      "accuracy": {
+        "mean": 0.9728874964016736,
+        "std": 0.0004935629754149338
+      },
+      "macro_f1": {
+        "mean": 0.9011629224781824,
+        "std": 0.0025226321387528815
+      },
+      "macro_precision": {
+        "mean": 0.8999196289898472,
+        "std": 0.002272490297399711
+      },
+      "macro_recall": {
+        "mean": 0.9024538356348032,
+        "std": 0.0037482812586438394
+      }
+    },
+    "test": {
+      "accuracy": 0.9747394387912427,
+      "macro_f1": 0.9065190939708171,
+      "macro_precision": 0.9053617016685939,
+      "macro_recall": 0.907686422120975,
+      "weighted_f1": 0.9747854425076087,
+      "per_class": {
+        "Attack": {
+          "precision": 0.9666692655543427,
+          "recall": 0.9699209888132676,
+          "f1": 0.968292397204108
+        },
+        "Benign": {
+          "precision": 0.9918112767137964,
+          "recall": 0.9897283158638334,
+          "f1": 0.9907687015022362
+        },
+        "Suspicious": {
+          "precision": 0.7576045627376425,
+          "recall": 0.7634099616858238,
+          "f1": 0.7604961832061069
+        }
+      }
+    },
+    "fit_time_s": 22.71342139999615,
+    "predict_time_s": 0.3293186000082642,
+    "svm_test": {
+      "accuracy": 0.8002590194264569,
+      "macro_f1": 0.666985130824515,
+      "macro_precision": 0.7026682546317851,
+      "macro_recall": 0.7961167313626504,
+      "weighted_f1": 0.8544141360286754,
+      "per_class": {
+        "Attack": {
+          "precision": 0.9951493102925573,
+          "recall": 0.7703590706406946,
+          "f1": 0.8684436801375752
+        },
+        "Benign": {
+          "precision": 0.9657123458187168,
+          "recall": 0.8146705615060046,
+          "f1": 0.8837845115055611
+        },
+        "Suspicious": {
+          "precision": 0.14714310778408093,
+          "recall": 0.8033205619412516,
+          "f1": 0.24872720083040878
+        }
+      }
+    },
+    "svm_fit_time_s": 83.14643049999722
+  },
+  "pso": {
+    "n_features": 27,
+    "features": [
+      "bwd_ack_flag_percentage_in_bwd_packets",
+      "bwd_ack_flag_percentage_in_total",
+      "dst_port",
+      "fwd_init_win_bytes",
+      "fwd_packets_IAT_cov",
+      "fwd_packets_IAT_mean",
+      "fwd_rst_flag_counts",
+      "fwd_syn_flag_percentage_in_total",
+      "fwd_total_header_bytes",
+      "max_fwd_packets_delta_time",
+      "max_header_bytes_delta_len",
+      "mean_bwd_packets_delta_time",
+      "mean_fwd_packets_delta_time",
+      "mean_header_bytes_delta_len",
+      "median_bwd_packets_delta_time",
+      "median_packets_delta_len",
+      "median_packets_delta_time",
+      "min_header_bytes",
+      "min_packets_delta_len",
+      "mode_bwd_packets_delta_len",
+      "packets_IAT_mean",
+      "rst_flag_percentage_in_total",
+      "src_port",
+      "std_packets_delta_time",
+      "syn_flag_percentage_in_total",
+      "variance_header_bytes",
+      "variance_packets_delta_time"
+    ],
+    "cv": {
+      "accuracy": {
+        "mean": 0.9718209306611509,
+        "std": 0.0003850303667118692
+      },
+      "macro_f1": {
+        "mean": 0.8991057684410138,
+        "std": 0.0017743498402511557
+      },
+      "macro_precision": {
+        "mean": 0.8946161274566118,
+        "std": 0.0016132587333534958
+      },
+      "macro_recall": {
+        "mean": 0.903839814962543,
+        "std": 0.0037056756647835883
+      }
+    },
+    "test": {
+      "accuracy": 0.9725439407955596,
+      "macro_f1": 0.9004089912634535,
+      "macro_precision": 0.8959509638257493,
+      "macro_recall": 0.9050589967278082,
+      "weighted_f1": 0.9727359145378734,
+      "per_class": {
+        "Attack": {
+          "precision": 0.9648718349484214,
+          "recall": 0.9658530861300164,
+          "f1": 0.9653622111888659
+        },
+        "Benign": {
+          "precision": 0.9913261593842148,
+          "recall": 0.9884682207839319,
+          "f1": 0.9898951272908043
+        },
+        "Suspicious": {
+          "precision": 0.7316548971446116,
+          "recall": 0.7608556832694764,
+          "f1": 0.7459696353106903
+        }
+      }
+    },
+    "fit_time_s": 24.740892200003145,
+    "predict_time_s": 0.28801379998913035,
+    "svm_test": {
+      "accuracy": 0.765340733888375,
+      "macro_f1": 0.6493962195262477,
+      "macro_precision": 0.700179381655162,
+      "macro_recall": 0.7962715486107633,
+      "weighted_f1": 0.8330057851196123,
+      "per_class": {
+        "Attack": {
+          "precision": 0.9959028831562974,
+          "recall": 0.7701243839474302,
+          "f1": 0.8685812599258868
+        },
+        "Benign": {
+          "precision": 0.9733968144894103,
+          "recall": 0.7572598659717051,
+          "f1": 0.8518319659808428
+        },
+        "Suspicious": {
+          "precision": 0.13123844731977818,
+          "recall": 0.8614303959131545,
+          "f1": 0.2277754326720135
+        }
+      }
+    },
+    "svm_fit_time_s": 78.97478910000063
+  },
+  "_overlap": {
+    "ga_pso_common": [
+      "dst_port",
+      "fwd_init_win_bytes",
+      "fwd_packets_IAT_mean",
+      "fwd_rst_flag_counts",
+      "packets_IAT_mean",
+      "src_port"
+    ],
+    "ga_only": [
+      "bwd_init_win_bytes",
+      "fwd_ack_flag_percentage_in_total",
+      "fwd_max_header_bytes",
+      "max_bwd_packets_delta_len",
+      "mean_bwd_packets_delta_len",
+      "mean_packets_delta_len",
+      "min_bwd_packets_delta_time",
+      "min_fwd_packets_delta_time",
+      "packets_IAT_cov"
+    ],
+    "pso_only": [
+      "bwd_ack_flag_percentage_in_bwd_packets",
+      "bwd_ack_flag_percentage_in_total",
+      "fwd_packets_IAT_cov",
+      "fwd_syn_flag_percentage_in_total",
+      "fwd_total_header_bytes",
+      "max_fwd_packets_delta_time",
+      "max_header_bytes_delta_len",
+      "mean_bwd_packets_delta_time",
+      "mean_fwd_packets_delta_time",
+      "mean_header_bytes_delta_len",
+      "median_bwd_packets_delta_time",
+      "median_packets_delta_len",
+      "median_packets_delta_time",
+      "min_header_bytes",
+      "min_packets_delta_len",
+      "mode_bwd_packets_delta_len",
+      "rst_flag_percentage_in_total",
+      "std_packets_delta_time",
+      "syn_flag_percentage_in_total",
+      "variance_header_bytes",
+      "variance_packets_delta_time"
+    ]
+  }
+}
