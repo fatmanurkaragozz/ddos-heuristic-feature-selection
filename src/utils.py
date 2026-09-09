@@ -6,8 +6,13 @@ from __future__ import annotations
 
 import json
 import sys
+import warnings
 from dataclasses import dataclass
 from pathlib import Path
+
+# sklearn'ün joblib bağlamında ürettiği "delayed should be used with Parallel"
+# uyarısı (davranışsal etkisi yok) log'ları boğuyordu — sustur.
+warnings.filterwarnings("ignore", message=".*delayed.*should be used with.*Parallel.*")
 
 # Windows konsolu (cp1254) Yunan harfi λ vb. karakterlerde çöküyor — UTF-8'e geç.
 for _stream in (sys.stdout, sys.stderr):
